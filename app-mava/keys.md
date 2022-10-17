@@ -1,0 +1,6 @@
+URL
+https://tksnhaoovuccystwupcq.supabase.co
+
+API Keys
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRrc25oYW9vdnVjY3lzdHd1cGNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjU1OTkyOTUsImV4cCI6MTk4MTE3NTI5NX0.CPpA2n2nmcUdj5RoxFa3D0Itrb7A0qL9CBEEyH056io
+

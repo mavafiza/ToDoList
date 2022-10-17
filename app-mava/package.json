@@ -11,7 +11,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^1.35.7",
     "pinia": "^2.0.23",
-    "pinia-plugin-persist": "^1.0.0",
+    "pinia-plugin-persist": "^0.0.93",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },

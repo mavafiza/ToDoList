@@ -7,9 +7,15 @@
 <style>
 @media (min-width: 1024px) {
     .about {
-        min-height: 100vh;
+        min-height: 10vh;
         display: flex;
         align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        height: 50px;
+        border-color: rgb(44, 219, 10);
     }
 }
 </style>

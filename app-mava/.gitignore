@@ -28,4 +28,4 @@ coverage
 *.sw?
 
 # Mis gitignore
-.env
+.env   
