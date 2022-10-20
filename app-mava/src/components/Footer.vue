@@ -1,7 +1,7 @@
 <script>
 
 </script>
-<!-- <template>
+<template>
     <div class="container">
         <div class="row">
             <div class="col-md-4 footer-column">
@@ -100,7 +100,4 @@
             </div>
         </div>
     </div>
-</template> -->
-<style>
-
-</style>
+</template>

@@ -12,12 +12,10 @@
             <RouterLink :to="{name:'home'}" class="nav-link">Home</RouterLink>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                aria-selected="false">Profile</a>
+            <RouterLink :to="{name:'register'}" class="nav-link">Register</RouterLink>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                aria-selected="false">Contact</a>
+            <RouterLink :to="{name:'login'}" class="nav-link">Login</RouterLink>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">

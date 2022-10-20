@@ -4,7 +4,7 @@
 <template>
     <div class="app-container" id="taskList">
         <h1 class="app-header">TO DO LIST</h1>
-        <div class="add-task">
+        <!-- <div class="add-task">
             <input type="text" autocomplete="off" placeholder="Add New Task" v-model="tasks.name" @keyup.enter="newItem"
                 class="task-input">
             <input type="submit" value="" class="submit-task" @click="newItem" title="Add Task">
@@ -17,22 +17,14 @@
                 </label>
                 <span @click="delItem(task)" class="delete-btn" title="Delete Task">{{task.del}}</span>
             </li>
-        </ul>
+        </ul> -->
     </div>
 
 </template>
 <style>
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
 * {
     box-sizing: border-box;
-}
-
-:root {
-    --checkbox-color: #ee9ca7;
-    --checkbox-shadow: rgba(238, 156, 167, 0.2);
-    --add-button: #ee9ca7;
-    --add-button-shadow: rgba(238, 156, 167, 0.4);
 }
 
 body {
@@ -110,9 +102,7 @@ ul {
     box-shadow: none;
     border-radius: 0;
 
-    &:placeholder {
-        color: #fff;
-    }
+
 }
 
 .task-list-item {
@@ -122,6 +112,7 @@ ul {
     display: flex;
     align-items: center;
     padding: 8px;
+}
 
     input {
         width: 16px;
@@ -138,7 +129,7 @@ ul {
         margin-top: 4px;
         appearance: none;
 
-        &:hover {
+        /* &:hover {
             border-color: var(--checkbox-color);
             box-shadow: 0 0 0 3px var(--checkbox-shadow);
         }
@@ -152,10 +143,10 @@ ul {
                 color: rgba(255, 255, 255, 0.5);
                 text-decoration: line-through rgba(255, 255, 255, 0.8);
             }
-        }
+        } */
     }
 
-    &-label {
+    /* &-label {
         display: flex;
         align-items: flex-start;
         color: #fff;
@@ -166,7 +157,7 @@ ul {
         transition: .2s;
         cursor: pointer;
     }
-}
+} */
 
 .delete-btn {
     margin-left: auto;
@@ -184,8 +175,8 @@ ul {
 
     input[type='checkbox'],
     input[type='radio'] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        --webkit-appearance: none;
+        --moz-appearance: none;
     }
 }
 </style>

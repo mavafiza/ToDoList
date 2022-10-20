@@ -8,9 +8,19 @@ const router = createRouter({
             name: 'home',
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () => import('../views/AboutView.vue')
+            path: '/register',
+            name: 'register',
+            component: () => import('../views/Register.vue')
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: () => import('../components/Login.vue')
+        },
+        {
+            path: '/create-tasks',
+            name: 'create-tasks',
+            component: () => import('../components/CreateTasks.vue')
         },
     ]
 })

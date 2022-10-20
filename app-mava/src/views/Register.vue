@@ -1,22 +1,34 @@
-<script>
-    import useUserStore from "../stores/user" //ojito
+<script setup>
+import {useUserStore} from "../stores/user"
+import {ref} from "vue"
+import { useRouter } from 'vue-router'
+
+const router = useRouter()  
+const email = ref('');
+const password = ref('');
+const userStore = useUserStore ();
+const handleSubmit = async() => {
+    await userStore.signUp(email.value, password.value)
+    console.log (email.value, password.value)
+    router.push({ path: '/login' });
+};
+
 </script>
 
 <template>
 
     <p class="texto">Registro</p>
     <div class="Registro">
-        <form method="post" action="https://getform.org/f/70415a77-d632-4883-bf07-2e15d3f557da">
-
-            <span class="fontawesome-user"></span><input type="text" required placeholder="Nombre de usuario"
-                autocomplete="off">
-            <span class="fontawesome-envelope-alt"></span><input type="text" id="email" required placeholder="Correo"
-                autocomplete="off">
-            <span class="fontawesome-lock"></span><input type="password" name="password" id="password" required
-                placeholder="Contraseña" autocomplete="off">
+        <form method="post" @submit.prevent="handleSubmit" action="https://getform.org/f/70415a77-d632-4883-bf07-2e15d3f557da">
+            <span class="fontawesome-envelope-alt"></span>
+            <input type="text" id="email" required placeholder="Correo" v-model="email" autocomplete="off">
+            <span class="fontawesome-lock"></span>
+            <input type="password" name="password" id="password" required placeholder="Contraseña" v-model="password" autocomplete="off">
             <input type="submit" value="Registrar" title="Registra tu cuenta">
         </form>
     </div>
+
+    
 
 </template>
 
@@ -43,7 +55,7 @@ input {
     line-height: 1.5em;
     margin: 0;
     padding: 0;
-    -webkit-appearance: none;
+    --webkit-appearance: none;
 }
 
 .Registro {
