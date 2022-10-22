@@ -1,15 +1,15 @@
 <script setup>
-import {useUserStore} from "../stores/user"
-import {ref} from "vue"
+import { useUserStore } from "../stores/user"
+import { ref } from "vue"
 import { useRouter } from 'vue-router'
 
-const router = useRouter()  
+const router = useRouter()
 const email = ref('');
 const password = ref('');
-const userStore = useUserStore ();
-const handleSubmit = async() => {
+const userStore = useUserStore();
+const handleSubmit = async () => {
     await userStore.signIn(email.value, password.value)
-    console.log (email.value, password.value)
+    console.log(email.value, password.value)
     router.push({ path: '/create-tasks' });
 };
 
@@ -17,18 +17,41 @@ const handleSubmit = async() => {
 
 <template>
 
-    <p class="texto">Login</p>
-    <div class="Login">
-        <form method="post" @submit.prevent="handleSubmit" action="https://getform.org/f/70415a77-d632-4883-bf07-2e15d3f557da">
-            <span class="fontawesome-envelope-alt"></span>
-            <input type="text" id="email" required placeholder="Correo" v-model="email" autocomplete="off">
-            <span class="fontawesome-lock"></span>
-            <input type="password" name="password" id="password" required placeholder="Contraseña" v-model="password" autocomplete="off">
-            <input type="submit" value="Registrar" title="Inicia Sesión">
+    <div class="Registro">
+        <p class="texto">LogIn</p>
+        <form class="well form-horizontal" method="post" @submit.prevent="handleSubmit" id="registration_form">
+            <fieldset>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="email" maxlength="30" placeholder="E-Mail" v-model="email" class="form-control"
+                            type="text">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input name="password" maxlength="16" placeholder="Password" v-model="password"
+                            class="form-control" type="password">
+                    </div>
+                </div>
+
+                <div class="alert alert-success" role="alert" style=" display: none;" id="LongedIn">Wellcome to your
+                    TodoList</div>
+
+                <div class="form-group">
+                    <label class=" control-label"></label>
+                    <button type="submit" title="Enter to your Account">LogIn</button>
+
+                </div>
+            </fieldset>
         </form>
     </div>
 
-    
+
 
 </template>
 

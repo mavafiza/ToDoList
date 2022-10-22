@@ -4,7 +4,7 @@
 
 <template>
     <div class="about">
-        <h1>This is a home page</h1>
+        <h1>MavApp</h1>
     </div>
     <nav>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -24,20 +24,29 @@
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
     </div>
 </nav>
+
+
+
 </template>
 
 <style>
+
 @media (min-width: 1024px) {
-    .about {
-        min-height: 10vh;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+
+ul li {
+    color: #b3c4ce;
+}
+
+.about {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     }
 
-    button {
-        height: 50px;
-        border-color: rgb(44, 219, 10);
+button {
+    height: 50px;
+    border-color: rgb(44, 219, 10);
     }
 }
 </style>
