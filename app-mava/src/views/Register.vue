@@ -14,9 +14,6 @@ const handleSubmit = async () => {
     router.push({ path: '/login' });
 };
 
-
-
-
 </script>
 
 <template>

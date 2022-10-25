@@ -10,7 +10,8 @@ const userStore = useUserStore();
 const handleSubmit = async () => {
     await userStore.signIn(email.value, password.value)
     console.log(email.value, password.value)
-    router.push({ path: '/create-tasks' });
+    router.push({ path: '/create-tasks' }); 
+    // por qué la linea 13 no es create-user en vez de create-tasks ?
 };
 
 </script>

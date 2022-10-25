@@ -1,7 +1,15 @@
 <script setup>
+import { useTaskStore } from "../stores/task"
+import { ref } from "vue"
+import { useRouter } from 'vue-router'
+// import { title } from "process";
+
+const router = useRouter()
+const title = ref('');
+const is_complete = ref('');
+const taskStore = useTaskStore();
 const tasks = []
-const addTask = () =>
-{
+const addTask = () => {
     if (newTask) {
         this.tasks.push({
             title: this.newTask,
@@ -9,16 +17,21 @@ const addTask = () =>
         });
         this.newTask = '';
     } else {
-        console.log ("error")
+        console.log("error")
     }
-}
+};
+const handleSubmit = async () => {
+    await taskStore.createTasks(title.value, is_complete.value)
+    console.log(title.value, is_complete.value)
+    router.push({ path: '/CreateTasks' });
+};
 </script>
 
 <template id="task-list">
     <h1>
         Tasks
     </h1>
-    <div class="tasks__new input-group">
+    <div class="tasks__new input-group" method="post" @submit.prevent="handleSubmit">
         <input type="text" class="input-group-field" v-model="newTask" placeholder="New task">
         <span class="input-group-button">
             <!-- crear la funcion para add tasks que añada el input a la lista ul -->
@@ -28,10 +41,15 @@ const addTask = () =>
     </div>
     <div>
         <ul>
-            <!-- uv if y uv for -->
-            <li v-for="task in tasks">{{title}}</li>
+            <!-- v-if y v-for -->
+            <li v-for="task in tasks" v-if="!tasks.is_complete">{{title}}</li>
+
         </ul>
+
     </div>
+
+
+
     <!-- <div class="tasks__clear button-group pull-right">
             <button class="button warning small"
                 @click="clearCompleted"

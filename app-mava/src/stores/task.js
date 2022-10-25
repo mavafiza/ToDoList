@@ -7,6 +7,7 @@ export const useTaskStore = defineStore('tasks', {
     state: () => ({
         tasks: null
     }),
+
     actions: {
         async fetchTasks() {
             const { data: tasks } = await supabase
@@ -15,11 +16,14 @@ export const useTaskStore = defineStore('tasks', {
                 .order('id', { ascending: false });
             this.tasks = tasks;
         },
-        async createTasks() {
+        async createTasks(title, is_complete) {
             const { data, error } = await supabase
                 .from('tasks')
                 .insert([
-                    { name: 'The Shire', country_id: 554 }
+                    { 
+                        tittle: title, 
+                        is_complete: is_complete,
+                    },
                 ])
         },
     }
