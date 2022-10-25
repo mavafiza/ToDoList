@@ -2,28 +2,29 @@
 import { useTaskStore } from "../stores/task"
 import { ref } from "vue"
 import { useRouter } from 'vue-router'
-// import { title } from "process";
+import { useUserStore } from "../stores/user"
+import { storeToRefs } from "pinia"
 
 const router = useRouter()
 const title = ref('');
-const is_complete = ref('');
+const is_complete = ref(false);
 const taskStore = useTaskStore();
-const tasks = []
-const addTask = () => {
-    if (newTask) {
-        this.tasks.push({
-            title: this.newTask,
-            completed: false
-        });
-        this.newTask = '';
-    } else {
-        console.log("error")
-    }
-};
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
+const { tasks } = storeToRefs(taskStore);
+
+
 const handleSubmit = async () => {
-    await taskStore.createTasks(title.value, is_complete.value)
+    await taskStore.createTasks(title.value, is_complete.value, user._object.user.id,)
     console.log(title.value, is_complete.value)
-    router.push({ path: '/CreateTasks' });
+    title.value = ""
+    is_complete.value = false
+    await taskStore.fetchTasks()
+
+const { data, error } = await supabase
+    .from('is_complete')
+    .delete()
+    .match({ id: 666 })
 };
 </script>
 
@@ -31,18 +32,19 @@ const handleSubmit = async () => {
     <h1>
         Tasks
     </h1>
-    <div class="tasks__new input-group" method="post" @submit.prevent="handleSubmit">
-        <input type="text" class="input-group-field" v-model="newTask" placeholder="New task">
+    <form class="tasks__new input-group" method="post" @submit.prevent="handleSubmit">
+        <input type="text" class="input-group-field" v-model="title" placeholder="New task">
+        <input type="checkbox" v-model="is_complete">
         <span class="input-group-button">
             <!-- crear la funcion para add tasks que añada el input a la lista ul -->
-            <button @click="addTask" class="button">
+            <button class="button" type="submit">
                 <i class="fa fa-plus"></i> Add </button>
         </span>
-    </div>
+    </form>
     <div>
         <ul>
-            <!-- v-if y v-for -->
-            <li v-for="task in tasks" v-if="!tasks.is_complete">{{title}}</li>
+
+            <li v-for="task in tasks">{{task.title}}</li>
 
         </ul>
 
