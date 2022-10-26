@@ -27,8 +27,11 @@ export const useTaskStore = defineStore('tasks', {
                     },
                 ])
         },
+        async deleteTasks() {
+            const { data, error } = await supabase
+                .from('tasks')
+                .delete()
+                .match('id');
+        },
     }
 });
-
-// tarea 
-

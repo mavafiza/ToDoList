@@ -13,18 +13,19 @@ const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 const { tasks } = storeToRefs(taskStore);
 
-
 const handleSubmit = async () => {
     await taskStore.createTasks(title.value, is_complete.value, user._object.user.id,)
     console.log(title.value, is_complete.value)
     title.value = ""
     is_complete.value = false
-    await taskStore.fetchTasks()
+    await taskStore.fetchTasks();
+};
 
-const { data, error } = await supabase
-    .from('is_complete')
-    .delete()
-    .match({ id: 666 })
+// const eraseTask = async () => {
+//     await taskStore.deleteTasks(eliminate_task.value, user._object.user.id,)
+//     console.log("Task deleted")
+//     eliminate_task.value = true
+//     await taskStore.fetchTasks();
 };
 </script>
 
@@ -36,9 +37,9 @@ const { data, error } = await supabase
         <input type="text" class="input-group-field" v-model="title" placeholder="New task">
         <input type="checkbox" v-model="is_complete">
         <span class="input-group-button">
-            <!-- crear la funcion para add tasks que añada el input a la lista ul -->
             <button class="button" type="submit">
                 <i class="fa fa-plus"></i> Add </button>
+            <button @click="eraseTask(ìd)">Delete</button>
         </span>
     </form>
     <div>
