@@ -12,6 +12,7 @@ const taskStore = useTaskStore();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 const { tasks } = storeToRefs(taskStore);
+console.log (tasks);
 
 const handleSubmit = async () => {
     await taskStore.createTasks(title.value, is_complete.value, user._object.user.id,)
@@ -21,12 +22,17 @@ const handleSubmit = async () => {
     await taskStore.fetchTasks();
 };
 
-// const eraseTask = async () => {
-//     await taskStore.deleteTasks(eliminate_task.value, user._object.user.id,)
-//     console.log("Task deleted")
-//     eliminate_task.value = true
-//     await taskStore.fetchTasks();
+const fetchTasks = async () => {
+    await taskStore.fetchTasks();
+}
+fetchTasks ();
+
+const deleteTasks = async (task) => {
+    await taskStore.deleteTasks(task.id)
+    console.log("Task deleted")
+    await taskStore.fetchTasks();
 };
+
 </script>
 
 <template id="task-list">
@@ -39,13 +45,16 @@ const handleSubmit = async () => {
         <span class="input-group-button">
             <button class="button" type="submit">
                 <i class="fa fa-plus"></i> Add </button>
-            <button @click="eraseTask(ìd)">Delete</button>
         </span>
     </form>
     <div>
         <ul>
 
-            <li v-for="task in tasks">{{task.title}}</li>
+            <li v-for="task in tasks" >{{task.title}}
+                <p v-if="task.is_complete">esta completa</p>
+                <p v-else>esta incompleta</p>
+                <button @click="deleteTasks(task)">Delete</button>
+            </li>
 
         </ul>
 
@@ -70,7 +79,13 @@ const handleSubmit = async () => {
 </template>
 
 
-<style>
+<style> 
+li {
+    color: #ffffff;
+    text-align: left;
+    list-style: none;
+}
+
 body {
     background-color: #abc;
 }
