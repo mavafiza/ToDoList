@@ -50,8 +50,6 @@ const handleSubmit = async () => {
                     </div>
                 </div>
 
-
-
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -59,14 +57,6 @@ const handleSubmit = async () => {
                             class="form-control" type="password">
                     </div>
                 </div>
-
-
-                <!-- <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input name="confirmpassword" maxlength="16" placeholder="Confirm Password" class="form-control" type="password">
-                </div>
-        </div>        -->
 
                 <div class="alert alert-success" role="alert" style=" display: none;" id="registration_success">
                     Registration Successfully Completed.</div>
@@ -148,11 +138,9 @@ const handleSubmit = async () => {
 </form>
 </div> -->
 
-
-
 </template>
 
-<style>
+<!-- <style>
 body {
     background: #1b1e24;
     background-image: -webkit-linear-gradient(right, #1b1e24, #1b1e24 50%, #1b1e24);
@@ -300,4 +288,4 @@ p:hover {
         border-color: rgb(44, 219, 10);
     }
 }
-</style>
+</style> -->

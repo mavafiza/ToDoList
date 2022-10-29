@@ -33,6 +33,12 @@ const deleteTasks = async (task) => {
     await taskStore.fetchTasks();
 };
 
+const modifyTasks = async (task) => {
+    await taskStore.modifyTasks(task.id)
+    console.log("Task modified")
+    await taskStore.fetchTasks();
+};
+
 </script>
 
 <template id="task-list">
@@ -54,6 +60,7 @@ const deleteTasks = async (task) => {
                 <p v-if="task.is_complete">esta completa</p>
                 <p v-else>esta incompleta</p>
                 <button @click="deleteTasks(task)">Delete</button>
+                <button >Edit</button>
             </li>
 
         </ul>
