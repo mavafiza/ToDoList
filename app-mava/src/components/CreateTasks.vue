@@ -8,11 +8,14 @@ import { storeToRefs } from "pinia"
 const router = useRouter()
 const title = ref('');
 const is_complete = ref(false);
+const newTitle = ref('')
+const editing = ref(false)
+
 const taskStore = useTaskStore();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 const { tasks } = storeToRefs(taskStore);
-console.log (tasks);
+console.log(tasks);
 
 const handleSubmit = async () => {
     await taskStore.createTasks(title.value, is_complete.value, user._object.user.id,)
@@ -25,7 +28,7 @@ const handleSubmit = async () => {
 const fetchTasks = async () => {
     await taskStore.fetchTasks();
 }
-fetchTasks ();
+fetchTasks();
 
 const deleteTasks = async (task) => {
     await taskStore.deleteTasks(task.id)
@@ -33,12 +36,26 @@ const deleteTasks = async (task) => {
     await taskStore.fetchTasks();
 };
 
-const modifyTasks = async (task) => {
-    await taskStore.modifyTasks(task.id)
-    console.log("Task modified")
-    await taskStore.fetchTasks();
+const enableEditing = (task) => {
+    newTitle.value = task.title
+    console.log("task", task)
+    console.log("newtitle", newTitle.value)
+    console.log("id", task.id)
+    editing.value = true
 };
 
+const disableEditing = () => {
+    newTitle.value = ''
+    editing.value = false
+};
+
+const saveEdit = async (task) => {
+    task.title = newTitle.value
+    await taskStore.updateTasks(newTitle.value.toString(), task.id, task.is_complete)
+    editing.value = false
+    console.log("Task edited")
+    await taskStore.fetchTasks();
+};
 </script>
 
 <template id="task-list">
@@ -46,24 +63,45 @@ const modifyTasks = async (task) => {
         Tasks
     </h1>
     <form class="tasks__new input-group" method="post" @submit.prevent="handleSubmit">
-        <input type="text" class="input-group-field" v-model="title" placeholder="New task">
+        <input type="text" class="button" v-model="title" placeholder="New task">
         <input type="checkbox" v-model="is_complete">
         <span class="input-group-button">
             <button class="button" type="submit">
-                <i class="fa fa-plus"></i> Add </button>
+                <i class="btn btn-outline-secondary"></i> Add </button>
+
         </span>
     </form>
     <div>
+
         <ul>
 
-            <li v-for="task in tasks" >{{task.title}}
+            <li v-for="task in tasks" class="input">
+                <div v-if="!editing">
+                    <span @click="enableEditing(task)">{{task.title}}</span>
+                    <button @click="deleteTasks(task)">Delete</button>
+                    <p v-if="task.is_complete">esta completa</p>
+                    <p v-else>esta incompleta</p>
+
+                </div>
+                <div v-if="editing">
+                    <input v-model="newTitle" class="input" />
+                    <button @click="disableEditing"> Cancel </button>
+                    <button @click="saveEdit(task)"> Save </button>
+                </div>
+            </li>
+
+
+        </ul>
+
+
+        <!-- <ul>
+            <span v-for="task in tasks">{{task.title}}
                 <p v-if="task.is_complete">esta completa</p>
                 <p v-else>esta incompleta</p>
                 <button @click="deleteTasks(task)">Delete</button>
-                <button >Edit</button>
-            </li>
-
-        </ul>
+                <button @input="editTask(title)">Edit</button>
+            </span>
+        </ul> -->
 
     </div>
 
@@ -86,11 +124,24 @@ const modifyTasks = async (task) => {
 </template>
 
 
-<style> 
+<style>
 li {
     color: #ffffff;
     text-align: left;
     list-style: none;
+}
+
+span {
+    color: #ffffff;
+    text-align: left;
+    list-style: none;
+}
+
+input {
+    color: red;
+    background-color: rgba(black, .1);
+    border-bottom: #efeae3;
+
 }
 
 body {
@@ -98,10 +149,35 @@ body {
 }
 
 *,
-h1,
-button {
+h1 {
     font-family: 'Nunito', sans-serif;
+    color: #ffffff1e;
 }
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    border: #f3f1ee2a solid 5px;
+    color: #efeae3;
+    cursor: pointer;
+    user-select: none;
+    transition: .25s ease-in-out all;
+}
+
+.button {
+
+    text-align: center;
+    border-radius: 5px;
+    width: auto;
+    height: 35px;
+}
+
+/* div:hover {
+    background-color: #ff9800;
+    color: white;
+} */
 
 .fade-enter-active,
 .fade-leave-active {
