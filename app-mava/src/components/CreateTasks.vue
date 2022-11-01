@@ -125,6 +125,18 @@ const saveEdit = async (task) => {
 
 
 <style scoped>
+#task-list {
+    width: 100%;
+    height: 50%;
+
+    width: 30%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+
+
+}
 li {
     color: #343A40;
     text-align: left;

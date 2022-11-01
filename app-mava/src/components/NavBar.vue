@@ -15,7 +15,7 @@
             <RouterLink :to="{name:'register'}" class="nav-link">Register</RouterLink>
         </li>
         <li class="nav-item">
-            <RouterLink :to="{name:'login'}" class="nav-link">Login</RouterLink>
+            <RouterLink :to="{name:'login'}" class="nav-link">LogIn</RouterLink>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -45,12 +45,12 @@ h1 {
 
 @media (min-width: 1024px) {
 
-.about {
+/* .about {
     min-height: 10vh;
     display: flex;
     align-items: center;
     gap: 10px;
-    }
+    } */
 
 
 }
