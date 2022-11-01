@@ -12,9 +12,14 @@
 
 </template>
 
+
+
+
+<!-- Estas clases NO son de boostrap -->
+
 <style scoped>
 .wellcome {
-    color: #ffffff;
+    color: #7c151554;;
     font-size: 1000%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

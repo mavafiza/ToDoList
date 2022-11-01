@@ -88,7 +88,9 @@
     </div>
 </template>
 
-<style>
+<!-- Estas clases NO son de boostrap -->
+
+<!-- <style>
 body {
     background: #1b1e24;
     background-image: -webkit-linear-gradient(right, #1b1e24, #1b1e24 50%, #1b1e24);
@@ -219,5 +221,6 @@ p:hover {
         gap: 10px;
     }
 
+
 }
-</style>
+</style> -->

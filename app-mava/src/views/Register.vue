@@ -140,6 +140,8 @@ const handleSubmit = async () => {
 
 </template>
 
+<!-- Estas clases NO son de boostrap -->
+
 <!-- <style>
 body {
     background: #1b1e24;

@@ -6,6 +6,9 @@
   font-weight: normal;
 }
 
+/* <!-- Estas clases NO son de boostrap --> */
+
+/* 
 body {
     background: #1b1e24;
     background-image: -webkit-linear-gradient(right, #1b1e24, #1b1e24 50%, #1b1e24);
@@ -152,4 +155,4 @@ p:hover {
         height: 50px;
         border-color: rgb(44, 219, 10);
     }
-}
+} */

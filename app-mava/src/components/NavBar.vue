@@ -29,6 +29,8 @@
 
 </template>
 
+<!-- Estas clases SI son de boostrap -->
+
 <style>
 
 @media (min-width: 1024px) {
