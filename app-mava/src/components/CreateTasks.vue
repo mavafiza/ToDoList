@@ -9,7 +9,7 @@ const router = useRouter()
 const title = ref('');
 const is_complete = ref(false);
 const newTitle = ref('')
-const editing = ref(false)
+const editId = ref(null)
 
 const taskStore = useTaskStore();
 const userStore = useUserStore();
@@ -41,18 +41,18 @@ const enableEditing = (task) => {
     console.log("task", task)
     console.log("newtitle", newTitle.value)
     console.log("id", task.id)
-    editing.value = true
+    editId.value = task.id
 };
 
 const disableEditing = () => {
     newTitle.value = ''
-    editing.value = false
+    editId.value = null
 };
 
 const saveEdit = async (task) => {
     task.title = newTitle.value
     await taskStore.updateTasks(newTitle.value.toString(), task.id, task.is_complete)
-    editing.value = false
+    editId.value = null
     console.log("Task edited")
     await taskStore.fetchTasks();
 };
@@ -76,17 +76,18 @@ const saveEdit = async (task) => {
         <ul>
 
             <li v-for="task in tasks" class="input">
-                <div v-if="!editing">
+                <div v-if="editId === task.id">
+                    <input v-model="newTitle" class="input" />
+                    <button @click="disableEditing"> Cancel </button>
+                    <button @click="saveEdit(task)"> Save </button>
+
+
+                </div>
+                <div v-else>
                     <span @click="enableEditing(task)">{{task.title}}</span>
                     <button @click="deleteTasks(task)">Delete</button>
                     <p v-if="task.is_complete">esta completa</p>
                     <p v-else>esta incompleta</p>
-
-                </div>
-                <div v-if="editing">
-                    <input v-model="newTitle" class="input" />
-                    <button @click="disableEditing"> Cancel </button>
-                    <button @click="saveEdit(task)"> Save </button>
                 </div>
             </li>
 
@@ -123,65 +124,37 @@ const saveEdit = async (task) => {
 </template>
 
 
-<style>
+<style scoped>
 li {
-    color: #ffffff;
+    color: #343A40;
     text-align: left;
     list-style: none;
 }
 
 span {
-    color: #ffffff;
+    color: #343A40;
     text-align: left;
     list-style: none;
 }
 
 input {
-    color: red;
+    color: #343A40;
     background-color: rgba(black, .1);
     border-bottom: #efeae3;
 
 }
 
 body {
+    margin: none;
     background-color: #abc;
 }
 
-*,
 h1 {
     font-family: 'Nunito', sans-serif;
     color: #ffffff1e;
 }
 
-button {
-    background-color: rgba(0, 0, 0, 0);
-    width: 200px;
-    padding: 10px;
-    border-radius: 10px;
-    border: #f3f1ee2a solid 5px;
-    color: #efeae3;
-    cursor: pointer;
-    user-select: none;
-    transition: .25s ease-in-out all;
-}
 
-.button {
-
-    text-align: center;
-    border-radius: 5px;
-    width: auto;
-    height: 35px;
-}
-
-/* div:hover {
-    background-color: #ff9800;
-    color: white;
-} */
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity .5s;
-}
 
 .fade-enter,
 .fade-leave-active {

@@ -4,7 +4,7 @@
 
 <template>
     <div class="about">
-        <h1>MavApp</h1>
+        <h1 class="display-5">The ToDo or Not ToDo List</h1>
     </div>
     <nav>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -25,19 +25,25 @@
     </div>
 </nav>
 
-
-
 </template>
 
 <!-- Estas clases SI son de boostrap -->
 
 <style>
 
-@media (min-width: 1024px) {
-
-ul li {
-    color: #b3c4ce;
+h1 {
+    color: #343A40;
+    text-align: center;
+    padding-top: 3%;
 }
+
+.nav-link {
+    color: rgb(130, 207, 207);
+    font-weight: 1500;
+}
+
+
+@media (min-width: 1024px) {
 
 .about {
     min-height: 10vh;
@@ -46,9 +52,6 @@ ul li {
     gap: 10px;
     }
 
-button {
-    height: 50px;
-    border-color: rgb(44, 219, 10);
-    }
+
 }
 </style>
