@@ -4,7 +4,7 @@
 
     <body class="bodyHome">
 
-
+<h3>Need to know what you have To Do ?</h3>
 
     </body>
 
@@ -14,7 +14,7 @@
 
 <style scoped>
 .bodyHome {
-    width: 100%;
+    width: 60%;
     height: 326px;
 }
 

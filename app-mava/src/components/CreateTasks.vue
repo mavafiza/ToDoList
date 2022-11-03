@@ -10,16 +10,16 @@ const title = ref('');
 const is_complete = ref(false);
 const newTitle = ref('')
 const editId = ref(null)
+const completeId = ref(false)
+
 
 const taskStore = useTaskStore();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 const { tasks } = storeToRefs(taskStore);
-console.log(tasks);
 
 const handleSubmit = async () => {
     await taskStore.createTasks(title.value, is_complete.value, user._object.user.id,)
-    console.log(title.value, is_complete.value)
     title.value = ""
     is_complete.value = false
     await taskStore.fetchTasks();
@@ -32,15 +32,11 @@ fetchTasks();
 
 const deleteTasks = async (task) => {
     await taskStore.deleteTasks(task.id)
-    console.log("Task deleted")
     await taskStore.fetchTasks();
 };
 
 const enableEditing = (task) => {
     newTitle.value = task.title
-    console.log("task", task)
-    console.log("newtitle", newTitle.value)
-    console.log("id", task.id)
     editId.value = task.id
 };
 
@@ -51,16 +47,23 @@ const disableEditing = () => {
 
 const saveEdit = async (task) => {
     task.title = newTitle.value
-    await taskStore.updateTasks(newTitle.value.toString(), task.id, task.is_complete)
+    await taskStore.updateTitle(newTitle.value, task.id)
     editId.value = null
-    console.log("Task edited")
     await taskStore.fetchTasks();
 };
+
+const changeIsComplete = async (task) => {
+    task.is_complete = !task.is_complete
+        await taskStore.updateIsComplete(task.is_complete, task.id)
+        await taskStore.fetchTasks();
+
+};
+
 </script>
 
 <template id="task-list">
 
-    <h2>
+    <!-- <h2>
         Tasks List (hasta aqui todo funciona bello!!! )
         Vamos a empezar con el form
     </h2>
@@ -94,11 +97,11 @@ const saveEdit = async (task) => {
             </li>
         </ul>
 
-    </div>
+    </div> -->
 
     <!--                          prueba                          -->
 
-    <!-- <div>
+    <div>
         <div class="newTask">
             <h2>Tasks List iniciando form y todo bien</h2>
             <h3>iniciando display flexes</h3>
@@ -120,9 +123,9 @@ const saveEdit = async (task) => {
                 <li v-for="task in tasks" class="input list-group-item toDoLi">
 
                     <div v-if="editId === task.id" class="input-group">
-                        <div class="input-group-text">
+                        <!-- <div class="input-group-text">
                             <input type="checkbox" v-model="is_complete" aria-label="Checkbox for following text input">
-                        </div>
+                        </div> -->
                         <input v-model="newTitle" type="text" class="input form-control" placeholder="edit mode"
                             aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
                         <div class="input-group-append" id="button-addon4">
@@ -134,17 +137,20 @@ const saveEdit = async (task) => {
                     </div>
 
                     <div v-else class="order">
+                        <div v-if="task.is_complete" class="input-group">
+                            <input @click="changeIsComplete(task)" type="checkbox" v-model="is_complete" checked>
+                        </div>
+                        <div v-else class="input-group">
+                            <input @click="changeIsComplete(task)" type="checkbox" v-model="is_complete">
+                        </div>
                         <div>
-                        <input type="checkbox" v-model="is_complete">
-                    </div>
-                        <div>
-                            <span @click="enableEditing(task)">{{task.title}}</span>
+                            <span v-if="task.is_complete" @click="enableEditing(task)"><del>{{task.title}}</del></span>
+                            <span v-else @click="enableEditing(task)">{{task.title}}</span>
 
-
-                            <div>
+                            <!-- <div>
                                 <p v-if="task.is_complete"><del>{{task.title}}</del></p>
                                 <p v-else></p>
-                            </div>
+                            </div> -->
                         </div>
                         <div>
                             <button @click="deleteTasks(task)" class="btn btn-outline-secondary"
@@ -154,9 +160,9 @@ const saveEdit = async (task) => {
                 </li>
             </ul>
         </div>
-    </div> -->
+    </div>
 
-            <!-- <ul>
+    <!-- <ul>
             <span v-for="task in tasks">{{task.title}}
                 <p v-if="task.is_complete">esta completa</p>
                 <p v-else>esta incompleta</p>
@@ -165,7 +171,7 @@ const saveEdit = async (task) => {
             </span>
         </ul> -->
 
-        <!-- <div class="tasks__clear button-group pull-right">
+    <!-- <div class="tasks__clear button-group pull-right">
             <button class="button warning small"
                 @click="clearCompleted"
             >
