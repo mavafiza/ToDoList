@@ -30,7 +30,7 @@ const handleSubmit = async () => {
     </div> -->
 
     <div class="registro">
-        <h4 class="texto">Register</h4>
+        <h4 class="texto">SignUp</h4>
         <form class="well form-horizontal" method="post" @submit.prevent="handleSubmit" id="registration_form">
             <fieldset>
 
@@ -64,7 +64,7 @@ const handleSubmit = async () => {
                 <div class="form-group">
                     <label class=" control-label"></label>
                     <!-- <button type="submit" class="btn btn-primary login-button Registro">Register</button> -->
-                    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit" title="Registra tu cuenta">Register</button>
+                    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit" title="Registra tu cuenta">SignUp</button>
 
                     
                 </div>

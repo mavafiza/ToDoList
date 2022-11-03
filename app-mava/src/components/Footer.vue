@@ -20,7 +20,7 @@
                         <div class="col-lg-6 mx-auto">
                             <div class="gapAround d-grid gap-2 d-sm-flex justify-content-sm-center">
                                 <button type="button"
-                                    class="gapAround btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Register</button>
+                                    class="gapAround btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">SignUp</button>
                                 <button type="button" 
                                 class="gapAround btn btn-outline-light btn-lg px-4">LogIn</button>
                             </div>
