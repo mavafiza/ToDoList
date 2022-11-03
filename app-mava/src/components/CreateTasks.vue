@@ -60,7 +60,7 @@ const saveEdit = async (task) => {
 
 <template id="task-list">
 
-    <!-- <h2>
+    <h2>
         Tasks List (hasta aqui todo funciona bello!!! )
         Vamos a empezar con el form
     </h2>
@@ -94,66 +94,69 @@ const saveEdit = async (task) => {
             </li>
         </ul>
 
-    </div> -->
+    </div>
 
     <!--                          prueba                          -->
 
     <!-- <div>
-        <h2>Tasks List iniciando form y todo bien</h2>
+        <div class="newTask">
+            <h2>Tasks List iniciando form y todo bien</h2>
+            <h3>iniciando display flexes</h3>
+        </div>
+
+        <div>
+            <form class="tasks__new input-group newTask" method="post" @submit.prevent="handleSubmit">
+                <input type="text" class="button input form-control border border-5" v-model="title"
+                    placeholder="New task" aria-describedby="button-addon4">
+                <div>
+                    <button class="btn btn-outline-secondary button" type="submit">Add</button>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="newTask">
+            <ul class="toDoList list-group list-group-flush">
+                <li v-for="task in tasks" class="input list-group-item toDoLi">
+
+                    <div v-if="editId === task.id" class="input-group">
+                        <div class="input-group-text">
+                            <input type="checkbox" v-model="is_complete" aria-label="Checkbox for following text input">
+                        </div>
+                        <input v-model="newTitle" type="text" class="input form-control" placeholder="edit mode"
+                            aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                        <div class="input-group-append" id="button-addon4">
+                            <button @click="disableEditing" class="btn btn-outline-secondary"
+                                type="button">Cancel</button>
+                            <button @click="saveEdit(task)" class="btn btn-outline-secondary"
+                                type="button">Save</button>
+                        </div>
+                    </div>
+
+                    <div v-else class="order">
+                        <div>
+                        <input type="checkbox" v-model="is_complete">
+                    </div>
+                        <div>
+                            <span @click="enableEditing(task)">{{task.title}}</span>
+
+
+                            <div>
+                                <p v-if="task.is_complete"><del>{{task.title}}</del></p>
+                                <p v-else></p>
+                            </div>
+                        </div>
+                        <div>
+                            <button @click="deleteTasks(task)" class="btn btn-outline-secondary"
+                                type="button">Delete</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div> -->
 
-    <div>
-        <form class="tasks__new input-group newTask" method="post" @submit.prevent="handleSubmit">
-            <input type="text" class="button input form-control" v-model="title" placeholder="New task"  
-            aria-describedby="button-addon4">
-            <div>
-                <button class="btn btn-outline-secondary button" type="submit">Add</button>
-                    
-            </div>
-        </form>
-    </div>
-
-    <div>
-        <ul class="toDoList list-group list-group-flush">
-            <li v-for="task in tasks" class="input list-group-item toDoLi">
-
-                <div v-if="editId === task.id" class="input-group">
-                    <!-- <div class="input-group-text">
-                        <input type="checkbox" v-model="is_complete" aria-label="Checkbox for following text input">
-                    </div> -->
-                    <input v-model="newTitle" type="text" class="input form-control" placeholder="edit mode"
-                        aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                    <div class="input-group-append" id="button-addon4">
-                        <!-- <input type="checkbox" v-model="is_complete"> -->
-                        <button @click="disableEditing" class="btn btn-outline-secondary" type="button">Cancel</button>
-                        <button @click="saveEdit(task)" class="btn btn-outline-secondary" type="button">Save</button>
-                    </div>
-                </div>
-
-                <div v-else>
-                    <!-- <div>
-                        <input type="checkbox" v-model="is_complete">
-                    </div> -->
-
-                    <span @click="enableEditing(task)">{{task.title}}</span>
-
-                    <div>
-                        <button @click="deleteTasks(task)" class="btn btn-outline-secondary"
-                            type="button">Delete</button>
-                    </div>
-                    <div>
-                        <p v-if="task.is_complete"><del>{{task.title}}</del></p>
-                        <p v-else></p>
-                    </div>
-                </div>
-            </li>
-
-
-        </ul>
-
-
-
-        <!-- <ul>
+            <!-- <ul>
             <span v-for="task in tasks">{{task.title}}
                 <p v-if="task.is_complete">esta completa</p>
                 <p v-else>esta incompleta</p>
@@ -162,8 +165,7 @@ const saveEdit = async (task) => {
             </span>
         </ul> -->
 
-    </div>
-    <!-- <div class="tasks__clear button-group pull-right">
+        <!-- <div class="tasks__clear button-group pull-right">
             <button class="button warning small"
                 @click="clearCompleted"
             >
@@ -189,14 +191,24 @@ const saveEdit = async (task) => {
     margin: 0 auto;
 }
 
+.order {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .newTask {
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
 }
+
 .toDoList {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
 
