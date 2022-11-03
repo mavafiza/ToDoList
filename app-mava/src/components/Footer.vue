@@ -107,9 +107,9 @@ h3 {
     bottom: 0; */
 }
 
-/* .gapAround {
-    margin: 10% 5% 5% 5%;
-} */
+.gapAround {
+    margin: 10% 30%;
+}
 
 
 @media (min-width: 1024px) {}

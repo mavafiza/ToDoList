@@ -4,7 +4,7 @@
 
     <body class="bodyHome">
 
-<h3>Need to know what you have To Do ?</h3>
+        <h3>Need to know what you have To Do ?</h3>
 
     </body>
 
@@ -14,8 +14,16 @@
 
 <style scoped>
 .bodyHome {
-    width: 60%;
-    height: 326px;
+    width: 100%;
+    height: 280px;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 10%;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
 }
 
 /* .wellcome {

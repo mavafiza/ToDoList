@@ -103,8 +103,9 @@ const changeIsComplete = async (task) => {
 
     <div>
         <div class="newTask">
-            <h2>Tasks List iniciando form y todo bien</h2>
-            <h3>iniciando display flexes</h3>
+            <!-- <h2>Tasks List iniciando form y todo bien</h2>
+            <h3>iniciando display flexes</h3> -->
+            <h4>Tasks</h4>
         </div>
 
         <div>
@@ -137,12 +138,12 @@ const changeIsComplete = async (task) => {
                     </div>
 
                     <div v-else class="order">
-                        <div v-if="task.is_complete" class="input-group">
-                            <input @click="changeIsComplete(task)" type="checkbox" v-model="is_complete" checked>
+                        <div class="input-group">
+                            <input @click="changeIsComplete(task)" type="checkbox" v-model="task.is_complete">
                         </div>
-                        <div v-else class="input-group">
+                        <!-- <div v-else class="input-group">
                             <input @click="changeIsComplete(task)" type="checkbox" v-model="is_complete">
-                        </div>
+                        </div> -->
                         <div>
                             <span v-if="task.is_complete" @click="enableEditing(task)"><del>{{task.title}}</del></span>
                             <span v-else @click="enableEditing(task)">{{task.title}}</span>
@@ -237,6 +238,11 @@ const changeIsComplete = async (task) => {
 
 
 } */
+h4 {
+    text-align: left;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
 
 li {
     color: #343A40;
