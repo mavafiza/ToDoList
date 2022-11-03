@@ -17,7 +17,7 @@ const handleSubmit = async () => {
 
 <template>
 
-    <div class="Registro">
+    <div class="registro">
         <h4 class="texto">LogIn</h4>
         <form class="well form-horizontal" method="post" @submit.prevent="handleSubmit" id="registration_form">
             <fieldset>
@@ -50,7 +50,17 @@ const handleSubmit = async () => {
 </template>
 
 <style>
+.texto {
+    padding: 5%;
+}
 
-
+.registro {
+    width: 30%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 2%;
+}
 
 </style>

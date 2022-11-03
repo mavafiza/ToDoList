@@ -1,51 +1,31 @@
 
 
 <template>
+
     <body class="bodyHome">
-        
+
+        <div class="input-group">
+            <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+            <input type="text" class="form-control" placeholder="Recipient's username"
+                aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+        </div>
+
     </body>
-    <!-- <div class="container">
-        <div class="circle"></div>
-        <div class="square"></div>
-        <div class="triangle"></div>
-    </div> -->
-
-    <!-- <h1 class="wellcome">The ToDo or Not ToDo List</h1> -->
-
-    <!-- <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-            <h1 class="display-5">The ToDo or Not ToDo List</h1>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div> -->
-
-
-
-
-    <!-- <div class="bg-success me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-        <div class="my-3 py-3">
-            <h1 class="display-5">The ToDo or Not ToDo List</h1>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div> -->
-
-
-
 
 </template>
-
-
-
 
 <!-- Estas clases NO son de boostrap -->
 
 <style scoped>
-
 .bodyHome {
     width: 100%;
-    height: 250px;
+    height: 326px;
 }
 
 /* .wellcome {

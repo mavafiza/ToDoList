@@ -59,39 +59,98 @@ const saveEdit = async (task) => {
 </script>
 
 <template id="task-list">
-    <h1>
-        Tasks
-    </h1>
-    <form class="tasks__new input-group" method="post" @submit.prevent="handleSubmit">
-        <input type="text" class="button" v-model="title" placeholder="New task">
+
+    <!-- <h2>
+        Tasks List (hasta aqui todo funciona bello!!! )
+        Vamos a empezar con el form
+    </h2>
+
+    <form class="tasks__new input-group newTask" method="post" @submit.prevent="handleSubmit">
+        <input type="text" class="button form-control" v-model="title" placeholder="New task">
         <input type="checkbox" v-model="is_complete">
         <span class="input-group-button">
-            <button class="button" type="submit">
-                <i class="btn btn-outline-secondary"></i> Add </button>
-
+            <button class="button btn btn-outline-secondary" type="submit"> Add </button>
         </span>
     </form>
+
     <div>
 
-        <ul>
+        <ul class="toDoList">
 
-            <li v-for="task in tasks" class="input">
+            <li v-for="task in tasks" class="input toDoLi">
+
                 <div v-if="editId === task.id">
                     <input v-model="newTitle" class="input" />
                     <button @click="disableEditing"> Cancel </button>
                     <button @click="saveEdit(task)"> Save </button>
-
-
                 </div>
+
                 <div v-else>
                     <span @click="enableEditing(task)">{{task.title}}</span>
                     <button @click="deleteTasks(task)">Delete</button>
-                    <p v-if="task.is_complete">esta completa</p>
-                    <p v-else>esta incompleta</p>
+                    <p v-if="task.is_complete">está completa</p>
+                    <p v-else>está incompleta</p>
+                </div>
+            </li>
+        </ul>
+
+    </div> -->
+
+    <!--                          prueba                          -->
+
+    <!-- <div>
+        <h2>Tasks List iniciando form y todo bien</h2>
+    </div> -->
+
+    <div>
+        <form class="tasks__new input-group newTask" method="post" @submit.prevent="handleSubmit">
+            <input type="text" class="button input form-control" v-model="title" placeholder="New task"  
+            aria-describedby="button-addon4">
+            <div>
+                <button class="btn btn-outline-secondary button" type="submit">Add</button>
+                    
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <ul class="toDoList list-group list-group-flush">
+            <li v-for="task in tasks" class="input list-group-item toDoLi">
+
+                <div v-if="editId === task.id" class="input-group">
+                    <!-- <div class="input-group-text">
+                        <input type="checkbox" v-model="is_complete" aria-label="Checkbox for following text input">
+                    </div> -->
+                    <input v-model="newTitle" type="text" class="input form-control" placeholder="edit mode"
+                        aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                    <div class="input-group-append" id="button-addon4">
+                        <!-- <input type="checkbox" v-model="is_complete"> -->
+                        <button @click="disableEditing" class="btn btn-outline-secondary" type="button">Cancel</button>
+                        <button @click="saveEdit(task)" class="btn btn-outline-secondary" type="button">Save</button>
+                    </div>
+                </div>
+
+                <div v-else>
+                    <!-- <div>
+                        <input type="checkbox" v-model="is_complete">
+                    </div> -->
+
+                    <span @click="enableEditing(task)">{{task.title}}</span>
+
+                    <div>
+                        <button @click="deleteTasks(task)" class="btn btn-outline-secondary"
+                            type="button">Delete</button>
+                    </div>
+                    <div>
+                        <p v-if="task.is_complete"><del>{{task.title}}</del></p>
+                        <p v-else></p>
+                    </div>
                 </div>
             </li>
 
+
         </ul>
+
 
 
         <!-- <ul>
@@ -104,9 +163,6 @@ const saveEdit = async (task) => {
         </ul> -->
 
     </div>
-
-
-
     <!-- <div class="tasks__clear button-group pull-right">
             <button class="button warning small"
                 @click="clearCompleted"
@@ -125,18 +181,45 @@ const saveEdit = async (task) => {
 
 
 <style scoped>
+.registro {
+    width: 30%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.newTask {
+    width: 60%;
+    margin: 0 auto;
+}
+.toDoList {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.toDoLi {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 
 #task-list {
     width: 100%;
     height: 50%;
 
-    width: 30%;
+    width: 80%;
     height: auto;
     text-align: center;
     justify-content: center;
     margin: 0 auto;
 
 
-}
+} */
+
 li {
     color: #343A40;
     text-align: left;

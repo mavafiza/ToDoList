@@ -9,13 +9,13 @@
     <nav>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-            <RouterLink :to="{name:'home'}" class="nav-link">Home</RouterLink>
+            <RouterLink :to="{name:'home'}" class="nav-link text-info">Home</RouterLink>
         </li>
         <li class="nav-item">
-            <RouterLink :to="{name:'register'}" class="nav-link">Register</RouterLink>
+            <RouterLink :to="{name:'register'}" class="nav-link text-info">Register</RouterLink>
         </li>
         <li class="nav-item">
-            <RouterLink :to="{name:'login'}" class="nav-link">LogIn</RouterLink>
+            <RouterLink :to="{name:'login'}" class="nav-link text-info">LogIn</RouterLink>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -29,7 +29,7 @@
 
 <!-- Estas clases SI son de boostrap -->
 
-<style>
+<style scoped>
 
 h1 {
     color: #343A40;
@@ -37,11 +37,13 @@ h1 {
     padding-top: 3%;
 }
 
-.nav-link {
-    color: rgb(130, 207, 207);
-    font-weight: 1500;
-}
 
+
+nav ul li {
+    font-size: 120%;
+    font-weight: 450;
+
+}
 
 @media (min-width: 1024px) {
 
