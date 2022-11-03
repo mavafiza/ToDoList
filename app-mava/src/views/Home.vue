@@ -4,17 +4,7 @@
 
     <body class="bodyHome">
 
-        <div class="input-group">
-            <div class="input-group-text">
-                    <input type="checkbox" aria-label="Checkbox for following text input">
-                </div>
-            <input type="text" class="form-control" placeholder="Recipient's username"
-                aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-            <div class="input-group-append" id="button-addon4">
-                <button class="btn btn-outline-secondary" type="button">Button</button>
-                <button class="btn btn-outline-secondary" type="button">Button</button>
-            </div>
-        </div>
+
 
     </body>
 
