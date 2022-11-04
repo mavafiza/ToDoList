@@ -20,17 +20,17 @@ const logout = () => {
         <h1 class="display-5">The ToDo or Not ToDo List</h1>
     </div>
     <nav>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <div v-if="user">
+        <ul class="nav nav-tabs " id="myTab" role="tablist">
+            <div v-if="user" class="nav-order">
                 <li class="nav-item">
                     <RouterLink :to="{name:'home'}" class="nav-link text-info">Home</RouterLink>
                 </li>
                 <li class="nav-item">
-                    <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link text-info">LogOut todo ok
+                    <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link text-info">LogOut
                     </RouterLink>
                 </li>
             </div>
-            <div v-else>
+            <div v-else class="nav-order">
                 <li class="nav-item">
                     <RouterLink :to="{name:'home'}" class="nav-link text-info">Home</RouterLink>
                 </li>
@@ -72,7 +72,9 @@ h1 {
     padding-top: 3%;
 }
 
-
+.nav-order{
+    display:flex
+}
 
 nav ul li {
     font-size: 120%;

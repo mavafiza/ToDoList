@@ -70,13 +70,12 @@ const changeIsComplete = async (task) => {
             <h4>Tasks</h4>
         </div>
 
-        <div>
-            <form class="tasks__new input-group newTask" method="post" @submit.prevent="handleSubmit">
-                <input type="text" class="button input form-control border border-5" v-model="title"
+        <div class="addTask">
+            <form class="tasks__new input-group toDoAdd" method="post" @submit.prevent="handleSubmit">
+                <input type="text" id="btn-check-outlined" class="button input form-control border border-5 addTask-text" v-model="title"
                     placeholder="New task" aria-describedby="button-addon4">
                 <div>
-                    <button class="btn btn-outline-info button me-sm-3 fw-bold" type="submit">Add</button>
-                      
+                    <button class="btn btn-outline-info button me-sm-3 fw-bold addTask-button" type="submit">Add</button>                      
                 </div>
             </form>
         </div>
@@ -90,36 +89,42 @@ const changeIsComplete = async (task) => {
                         <input v-model="newTitle" type="text" class="input form-control" placeholder="edit mode"
                             aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
                         <div class="input-group-append" id="button-addon4">
-                            <button @click="disableEditing" class="btn btn-outline-secondary"
+                            <button @click="disableEditing" class="btn btn-outline-dark myHover"
                                 type="button">Cancel</button>
-                            <button @click="saveEdit(task)" class="btn btn-outline-secondary"
+                            <button @click="saveEdit(task)" class="btn btn-outline-info me-sm-3 fw-bold addTask-save"
                                 type="button">Save</button>
                         </div>
                     </div>
 
                     <div v-else class="order">
-                        <div class="input-group">
+                        <div class="input-group order-checkbox">
                             <input @click="changeIsComplete(task)" type="checkbox" v-model="task.is_complete">
                         </div>
 
-                        <div>
+                        <div class="order-title">
                             <span v-if="task.is_complete" @click="enableEditing(task)"><del>{{task.title}}</del></span>
                             <span v-else @click="enableEditing(task)">{{task.title}}</span>
                         </div>
                         <div>
-                            <button @click="deleteTasks(task)" class="btn btn-outline-secondary"
+                            <button @click="deleteTasks(task)" class="btn btn-outline-dark myHover"
                                 type="button">Delete</button>
                         </div>
                     </div>
                 </li>
             </ul>
+            <hr>
         </div>
     </div>
+    
 
 </template>
 
 
 <style scoped>
+.order div input {
+    opacity: 20%;
+    background-color: red;
+}
 .registro {
     width: 30%;
     height: auto;
@@ -132,11 +137,44 @@ const changeIsComplete = async (task) => {
     display: flex;
     width: 100%;
     margin: 0 auto;
-    align-items: center;
+    flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
 }
+
+.order-checkbox{
+    width: 5%;
+}
+
+.order-title{
+    width: 100%;
+    text-align: left;
+}
+
+.myHover:hover {
+    color: white;
+    background-color: #343A40;
+}
+    
+.addTask {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.addTask-text{
+    width: 72%;
+}
+
+.addTask-button{
+    width: 100%;
+    padding-right: 28px;
+}
+
+.addTask-save{
+    width: 100%;
+    padding-right: 25px;
+}
+
 
 .newTask {
     width: 40%;
@@ -149,13 +187,23 @@ const changeIsComplete = async (task) => {
     width: 100%;
     margin: 0 auto;
 }
-
+.toDoAdd {
+    width: 100%;
+    margin: 0 auto;
+}
 .toDoLi {
     display: flex;
     width: 100%;
     margin: 0 auto;
+    padding: 0;
 }
 
+hr {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
 /* 
 #task-list {
     width: 100%;
