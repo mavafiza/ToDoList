@@ -151,5 +151,7 @@ const handleSubmit = async () => {
     text-align: center;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 150px;
+
 }
 </style>

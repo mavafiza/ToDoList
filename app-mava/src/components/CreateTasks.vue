@@ -65,7 +65,7 @@ const changeIsComplete = async (task) => {
 
     <!--                          prueba                          -->
 
-    <div>
+    <div class="padding-top">
         <div class="newTask">
             <h4>Tasks</h4>
         </div>
@@ -124,6 +124,11 @@ const changeIsComplete = async (task) => {
 .order div input {
     opacity: 20%;
     background-color: red;
+}
+
+.padding-top {
+    padding-top: 150px;
+
 }
 .registro {
     width: 30%;

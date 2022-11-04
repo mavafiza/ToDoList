@@ -61,6 +61,7 @@ const handleSubmit = async () => {
     justify-content: center;
     margin: 0 auto;
     padding-bottom: 2%;
+    padding-top: 150px;
 }
 
 </style>

@@ -77,15 +77,11 @@ h3 {
 }
 
 .upFooter {
-    /* background-color: red; */
     margin: 0 auto;
     width: 20%;
     position: relative;
     display: flex;
     flex-direction: column;
-    /* top: -80px; */
-    /* border-color: blue solid; */
-
 }
 
 .icons-flex {
@@ -95,7 +91,6 @@ h3 {
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /* background-color: blueviolet; */
 
 }
 
@@ -103,8 +98,6 @@ h3 {
     flex-direction: column;
     width: 100%;
     display: flex;
-    /* position: fixed;
-    bottom: 0; */
 }
 
 .gapAround {

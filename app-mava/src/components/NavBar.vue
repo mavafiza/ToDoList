@@ -16,55 +16,40 @@ const logout = () => {
 </script>
 
 <template>
-    <div class="about">
-        <h1 class="display-5">The ToDo or Not ToDo List</h1>
+    <div class="fixed-top container-color">
+        <div class="about">
+            <h1 class="display-5">The ToDo or Not ToDo List freno top</h1>
+        </div>
+        <nav>
+            <ul class="nav nav-tabs fixed" id="myTab" role="tablist">
+                <div v-if="user" class="nav-order">
+                    <li class="nav-item">
+                        <RouterLink :to="{name:'home'}" class="nav-link gray-text">Home</RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link gray-text">LogOut
+                        </RouterLink>
+                    </li>
+                </div>
+                <div v-else class="nav-order">
+                    <li class="nav-item">
+                        <RouterLink :to="{name:'home'}" class="nav-link gray-text">Home</RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name:'register'}" class="nav-link gray-text">SignUp</RouterLink>
+                    </li>
+                    <li class="nav-item">
+                        <RouterLink :to="{name:'login'}" class="nav-link gray-text">LogIn</RouterLink>
+                    </li>
+                </div>
+
+            </ul>
+        </nav>
     </div>
-    <nav>
-        <ul class="nav nav-tabs " id="myTab" role="tablist">
-            <div v-if="user" class="nav-order">
-                <li class="nav-item">
-                    <RouterLink :to="{name:'home'}" class="nav-link text-info">Home</RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link text-info">LogOut
-                    </RouterLink>
-                </li>
-            </div>
-            <div v-else class="nav-order">
-                <li class="nav-item">
-                    <RouterLink :to="{name:'home'}" class="nav-link text-info">Home</RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink :to="{name:'register'}" class="nav-link text-info">SignUp</RouterLink>
-                </li>
-                <li class="nav-item">
-                    <RouterLink :to="{name:'login'}" class="nav-link text-info">LogIn</RouterLink>
-                </li>
-            </div>
-
-        </ul>
-
-        <!-- <ul id="example-2">
-            <li v-for="(item, index) in items">
-                {{ parentMessage }} - {{ index }} - {{ item.message }}
-            </li>
-        </ul> -->
-
-        <!-- <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
-            <div class="tab-pane fade" id="logout" role="tabpanel" aria-labelledby="contact-tab">
-            </div>
-
-        </div> -->
-
-    </nav>
-
 </template>
 
 <!-- Estas clases SI son de boostrap -->
-
+<!-- color info #17a2b8 -->
 <style scoped>
 h1 {
     color: #343A40;
@@ -72,8 +57,15 @@ h1 {
     padding-top: 3%;
 }
 
-.nav-order{
-    display:flex
+.gray-text {
+    color: #343A40;
+}
+
+.container-color {
+    background-color: #17a2b8;
+}
+.nav-order {
+    display: flex
 }
 
 nav ul li {
