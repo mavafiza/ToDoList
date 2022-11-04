@@ -64,84 +64,25 @@ const handleSubmit = async () => {
                 <div class="form-group">
                     <label class=" control-label"></label>
                     <!-- <button type="submit" class="btn btn-primary login-button Registro">Register</button> -->
-                    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit" title="Registra tu cuenta">SignUp</button>
+                    <button class="buttonHome btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" type="submit" title="Registra tu cuenta">SignUp</button>
 
-                    
                 </div>
             </fieldset>
+            <RouterLink :to="{name:'login'}" class="nav-link grey-text">LogIn ?</RouterLink>
+
         </form>
     </div>
 
-    <!-- <div class="container">
 
-<form class="well form-horizontal" action="" method="post" id="registration_form">
-    <fieldset>
-        <legend>Register</legend>
-        <div class="form-group">
-            <label class="col-md-4 control-label">Name</label>
-            <div class="col-md-4 ">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input name="name" maxlength="30" placeholder="Name" class="form-control" type="text" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" >
-                </div>
-            </div>
-        </div>
-    
-        <div class="form-group">
-            <label class="col-md-4 control-label">E-Mail</label>
-            <div class="col-md-4 ">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input name="email" maxlength="30" placeholder="E-Mail" class="form-control" type="text">
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Phone-Number</label>
-            <div class="col-md-4 ">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                    <input name="Phone-Number" maxlength="15" placeholder="Phone-Number" class="form-control" type="text">
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Password</label>
-            <div class="col-md-4 ">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input name="password" maxlength="16" placeholder="**********" class="form-control" type="password">
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Confirm Password</label>
-            <div class="col-md-4 ">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input name="confirmpassword" maxlength="16" placeholder="**********" class="form-control" type="password">
-                </div>
-            </div>
-        </div>       
-        
-        <div class="alert alert-success" role="alert" style=" display: none;" id="registration_success">Registration Successfully Completed.</div>
-            
-        <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary login-button">Register</button>
-            </div>
-        </div>
-    </fieldset>
-</form>
-</div> -->
 
 </template>
 
 <style scoped>
+.grey-text {
+    
+    color: rgb(87, 84, 84);
+    text-decoration: underline;
+}
 .texto {
     padding: 5%;
 }

@@ -1,5 +1,17 @@
-<script>
+<script setup>
+import { useRouter } from 'vue-router'
 
+import { useUserStore } from '@/stores/user';
+import { storeToRefs } from "pinia"
+
+const router = useRouter()
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
+
+const logout = () => {
+    user.value = null
+    router.push({ name: 'home' })
+};
 </script>
 <template>
 
@@ -16,20 +28,20 @@
             <footer class="borderAround bg-dark text-secondary px-4 text-center">
                 <div class="yellow">
                     <div class="upFooter">
-                        <h4 class="display-5 fw-bold text-white">always something ToDo</h4>
-                        <div class="col-lg-6 mx-auto">
+                        <h4 class="display-5 fw-bold text-white">There is always something ToDo</h4>
+                        <!-- <div class="col-lg-6 mx-auto">
                             <div class="gapAround d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                <button type="button"
-                                    class="gapAround btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">SignUp</button>
+                                <button type="button" class="gapAround btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold text-light color-text-button">
+                                    <RouterLink :to="{name:'register'}">SignUp</RouterLink></button>
                                 <button type="button" 
                                 class="gapAround btn btn-outline-light btn-lg px-4">LogIn</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div>
                         <div class="row align-items-md-end py-4 icons-flex">
-                            <div class="col-md mb-3 mb-md-0">
+                            <div class="col-md mb-3 mb-md-0 vertical-text">
                                 <p class="text-light-grey mb-0">© Mavafiza. 2022 Barcelona-Spain. All rights reserved.
                                 </p>
                             </div>
@@ -73,10 +85,13 @@ h3 {
     text-align: center;
 }
 
+.vertical-text {
+    text-orientation: upright;
+}
 
 .upFooter {
     margin: 0 auto;
-    width: 20%;
+    width: 30%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -103,6 +118,7 @@ h3 {
 
 .gapAround {
     margin: 10% 30%;
+
 }
 
 

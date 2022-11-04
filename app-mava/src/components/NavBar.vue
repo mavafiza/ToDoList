@@ -23,9 +23,9 @@ const logout = () => {
         <nav>
             <ul class="nav nav-tabs fixed" id="myTab" role="tablist">
                 <div v-if="user" class="nav-order">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <RouterLink :to="{name:'home'}" class="nav-link grey-text">Home</RouterLink>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link grey-text">LogOut
                         </RouterLink>
@@ -52,13 +52,15 @@ const logout = () => {
 <!-- color info #17a2b8 -->
 <style scoped>
 h1 {
-    color: #343A40;
+    /* color: #343A40; */
+    color: white;
     text-align: center;
     padding-top: 1%;
 }
 
 .grey-text {
-    color: #343A40;
+    /* color: #343A40; */
+    color: white;
 }
 
 .container-color {

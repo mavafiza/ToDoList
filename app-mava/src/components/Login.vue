@@ -41,15 +41,26 @@ const handleSubmit = async () => {
 
                 <div class="form-group">
                     <label class=" control-label"></label>
-                    <button class="w-100 btn btn-lg btn-outline-secondary" type="submit" title="Enter to your Account">LogIn</button>
+                    <button class="buttonHome btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold" type="submit" title="Enter to your Account">LogIn</button>
                 </div>
             </fieldset>
         </form>
+        <a href=""><RouterLink :to="{name:'register'}" class="nav-link grey-text">SignUp ?</RouterLink>
+</a>
     </div>
 
 </template>
 
-<style>
+<style scoped>
+
+.grey-text {
+    color: rgb(87, 84, 84);
+    padding: 0;
+    text-decoration: underline;
+    margin-top: -15px;
+}
+
+
 .texto {
     padding: 5%;
 }

@@ -3,9 +3,15 @@
 <template>
 
     <body class="bodyHome">
+        <div class="orderHome">
+            <h3>Wellcome</h3>
+            <h5>Need to remember what you have ToDo ?</h5>
+            <!-- <button class="buttonHome btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Create your Tasks list here</button> -->
 
-        <h3>Need to know what you have To Do ?</h3>
+            <button class="buttonHome btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">
+            <RouterLink :to="{name:'login'}" class="link-color">Create your Tasks list here</RouterLink></button>
 
+        </div>
     </body>
 
 </template>
@@ -15,15 +21,46 @@
 <style scoped>
 .bodyHome {
     width: 100%;
-    height: 280px;
+    height: auto;
+    /* padding-top: 1000px; */
+}
+
+.link-color {
+    text-decoration: none;
+    color: #17a2b8;
+}
+
+.link-color:hover {
+    color: white;
+}
+.orderHome {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
     padding-top: 100px;
+    gap: 10%;
 }
 
 h3 {
     text-align: center;
     padding-top: 10%;
-    margin: 0 auto;
+    margin: 1% auto;
     width: 100%;
+    height: auto;
+}
+
+h5 {
+    text-align: center;
+    margin: 2% auto;
+    width: 100%;
+    height: auto;
+}
+
+.buttonHome {
+    text-align: center;
+    margin: 0 auto;
     height: auto;
 }
 
