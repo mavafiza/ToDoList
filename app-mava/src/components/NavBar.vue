@@ -18,8 +18,6 @@ const logout = () => {
 <template>
     <div class="about">
         <h1 class="display-5">The ToDo or Not ToDo List</h1>
-        <h1 class="display-5">ToDo ok ok ok</h1>
-
     </div>
     <nav>
         <ul class="nav nav-tabs" id="myTab" role="tablist">

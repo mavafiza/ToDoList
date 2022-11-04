@@ -63,48 +63,10 @@ const changeIsComplete = async (task) => {
 
 <template id="task-list">
 
-    <!-- <h2>
-        Tasks List (hasta aqui todo funciona bello!!! )
-        Vamos a empezar con el form
-    </h2>
-
-    <form class="tasks__new input-group newTask" method="post" @submit.prevent="handleSubmit">
-        <input type="text" class="button form-control" v-model="title" placeholder="New task">
-        <input type="checkbox" v-model="is_complete">
-        <span class="input-group-button">
-            <button class="button btn btn-outline-secondary" type="submit"> Add </button>
-        </span>
-    </form>
-
-    <div>
-
-        <ul class="toDoList">
-
-            <li v-for="task in tasks" class="input toDoLi">
-
-                <div v-if="editId === task.id">
-                    <input v-model="newTitle" class="input" />
-                    <button @click="disableEditing"> Cancel </button>
-                    <button @click="saveEdit(task)"> Save </button>
-                </div>
-
-                <div v-else>
-                    <span @click="enableEditing(task)">{{task.title}}</span>
-                    <button @click="deleteTasks(task)">Delete</button>
-                    <p v-if="task.is_complete">está completa</p>
-                    <p v-else>está incompleta</p>
-                </div>
-            </li>
-        </ul>
-
-    </div> -->
-
     <!--                          prueba                          -->
 
     <div>
         <div class="newTask">
-            <!-- <h2>Tasks List iniciando form y todo bien</h2>
-            <h3>iniciando display flexes</h3> -->
             <h4>Tasks</h4>
         </div>
 
@@ -113,8 +75,8 @@ const changeIsComplete = async (task) => {
                 <input type="text" class="button input form-control border border-5" v-model="title"
                     placeholder="New task" aria-describedby="button-addon4">
                 <div>
-                    <button class="btn btn-outline-secondary button" type="submit">Add</button>
-
+                    <button class="btn btn-outline-info button me-sm-3 fw-bold" type="submit">Add</button>
+                      
                 </div>
             </form>
         </div>
@@ -124,9 +86,7 @@ const changeIsComplete = async (task) => {
                 <li v-for="task in tasks" class="input list-group-item toDoLi">
 
                     <div v-if="editId === task.id" class="input-group">
-                        <!-- <div class="input-group-text">
-                            <input type="checkbox" v-model="is_complete" aria-label="Checkbox for following text input">
-                        </div> -->
+
                         <input v-model="newTitle" type="text" class="input form-control" placeholder="edit mode"
                             aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
                         <div class="input-group-append" id="button-addon4">
@@ -141,17 +101,10 @@ const changeIsComplete = async (task) => {
                         <div class="input-group">
                             <input @click="changeIsComplete(task)" type="checkbox" v-model="task.is_complete">
                         </div>
-                        <!-- <div v-else class="input-group">
-                            <input @click="changeIsComplete(task)" type="checkbox" v-model="is_complete">
-                        </div> -->
+
                         <div>
                             <span v-if="task.is_complete" @click="enableEditing(task)"><del>{{task.title}}</del></span>
                             <span v-else @click="enableEditing(task)">{{task.title}}</span>
-
-                            <!-- <div>
-                                <p v-if="task.is_complete"><del>{{task.title}}</del></p>
-                                <p v-else></p>
-                            </div> -->
                         </div>
                         <div>
                             <button @click="deleteTasks(task)" class="btn btn-outline-secondary"
@@ -162,29 +115,6 @@ const changeIsComplete = async (task) => {
             </ul>
         </div>
     </div>
-
-    <!-- <ul>
-            <span v-for="task in tasks">{{task.title}}
-                <p v-if="task.is_complete">esta completa</p>
-                <p v-else>esta incompleta</p>
-                <button @click="deleteTasks(task)">Delete</button>
-                <button @input="editTask(title)">Edit</button>
-            </span>
-        </ul> -->
-
-    <!-- <div class="tasks__clear button-group pull-right">
-            <button class="button warning small"
-                @click="clearCompleted"
-            >
-            <i class="fa fa-check"></i> Clear Completed
-            </button>
-            <button class="button alert small"
-                @click="clearAll"
-            >
-            <i class="fa fa-trash"></i> Clear All
-            </button>
-        </div> -->
-
 
 </template>
 
@@ -200,11 +130,12 @@ const changeIsComplete = async (task) => {
 
 .order {
     display: flex;
-    flex-direction: row;
     width: 100%;
     margin: 0 auto;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .newTask {
