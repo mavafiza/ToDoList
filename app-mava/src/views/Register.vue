@@ -79,9 +79,11 @@ const handleSubmit = async () => {
 
 <style scoped>
 .grey-text {
-    
+
     color: rgb(87, 84, 84);
     text-decoration: underline;
+    text-decoration: underline;
+    /* margin-top: -15px; */
 }
 .texto {
     padding: 5%;
