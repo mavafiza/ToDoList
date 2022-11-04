@@ -13,10 +13,10 @@
             </div>
 
 
-            <footer class="borderAround bg-dark text-secondary px-4 py-5 text-center">
+            <footer class="borderAround bg-dark text-secondary px-4 text-center">
                 <div class="yellow">
                     <div class="upFooter">
-                        <h3 class="display-5 fw-bold text-white">always something ToDo</h3>
+                        <h4 class="display-5 fw-bold text-white">always something ToDo</h4>
                         <div class="col-lg-6 mx-auto">
                             <div class="gapAround d-grid gap-2 d-sm-flex justify-content-sm-center">
                                 <button type="button"
@@ -26,17 +26,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
 
-                        <div class="row align-items-md-end py-5 icons-flex">
+                    <div>
+                        <div class="row align-items-md-end py-4 icons-flex">
                             <div class="col-md mb-3 mb-md-0">
                                 <p class="text-light-grey mb-0">© Mavafiza. 2022 Barcelona-Spain. All rights reserved.
                                 </p>
                             </div>
-
                             <div class="col-md d-md-flex justify-content-md-end">
-
-
                                 <!-- Socials -->
                                 <ul class="list-inline mb-0 icons-flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -76,6 +73,7 @@ h3 {
     text-align: center;
 }
 
+
 .upFooter {
     margin: 0 auto;
     width: 20%;
@@ -84,6 +82,9 @@ h3 {
     flex-direction: column;
 }
 
+.container {
+    padding: 0;
+}
 .icons-flex {
     display: flex;
     width: 100%;

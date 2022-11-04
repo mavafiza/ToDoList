@@ -16,6 +16,7 @@
 .bodyHome {
     width: 100%;
     height: 280px;
+    padding-top: 100px;
 }
 
 h3 {

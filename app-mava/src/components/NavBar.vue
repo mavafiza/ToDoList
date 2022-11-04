@@ -18,28 +18,28 @@ const logout = () => {
 <template>
     <div class="fixed-top container-color">
         <div class="about">
-            <h1 class="display-5">The ToDo or Not ToDo List freno top</h1>
+            <h1 class="display-5">The ToDo or Not ToDo List</h1>
         </div>
         <nav>
             <ul class="nav nav-tabs fixed" id="myTab" role="tablist">
                 <div v-if="user" class="nav-order">
                     <li class="nav-item">
-                        <RouterLink :to="{name:'home'}" class="nav-link gray-text">Home</RouterLink>
+                        <RouterLink :to="{name:'home'}" class="nav-link grey-text">Home</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link gray-text">LogOut
+                        <RouterLink :to="{name:'home'}" v-on:click="logout" class="nav-link grey-text">LogOut
                         </RouterLink>
                     </li>
                 </div>
                 <div v-else class="nav-order">
                     <li class="nav-item">
-                        <RouterLink :to="{name:'home'}" class="nav-link gray-text">Home</RouterLink>
+                        <RouterLink :to="{name:'home'}" class="nav-link grey-text">Home</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink :to="{name:'register'}" class="nav-link gray-text">SignUp</RouterLink>
+                        <RouterLink :to="{name:'register'}" class="nav-link grey-text">SignUp</RouterLink>
                     </li>
                     <li class="nav-item">
-                        <RouterLink :to="{name:'login'}" class="nav-link gray-text">LogIn</RouterLink>
+                        <RouterLink :to="{name:'login'}" class="nav-link grey-text">LogIn</RouterLink>
                     </li>
                 </div>
 
@@ -54,10 +54,10 @@ const logout = () => {
 h1 {
     color: #343A40;
     text-align: center;
-    padding-top: 3%;
+    padding-top: 1%;
 }
 
-.gray-text {
+.grey-text {
     color: #343A40;
 }
 
