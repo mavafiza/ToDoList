@@ -18,17 +18,6 @@ const handleSubmit = async () => {
 
 <template>
 
-    <!-- <p class="texto">Registro</p>
-    <div class="Registro">
-        <form method="post" @submit.prevent="handleSubmit" action="https://getform.org/f/70415a77-d632-4883-bf07-2e15d3f557da">
-            <span class="fontawesome-envelope-alt"></span>
-            <input type="text" id="email" required placeholder="Correo" v-model="email" autocomplete="off">
-            <span class="fontawesome-lock"></span>
-            <input type="password" name="password" id="password" required placeholder="Contraseña" v-model="password" autocomplete="off">
-            <input type="submit" value="Registrar" title="Registra tu cuenta">
-        </form>
-    </div> -->
-
     <div class="registro">
         <h4 class="texto">SignUp</h4>
         <form class="well form-horizontal" method="post" @submit.prevent="handleSubmit" id="registration_form">
@@ -97,4 +86,52 @@ const handleSubmit = async () => {
     padding-top: 150px;
 
 }
+
+@media (max-width: 400px) {
+.registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 37rem;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+form {
+    width: 90%;
+}
+
+a {
+    padding: 0;
+    font-size: x-large;
+}
+.texto {
+    padding-top: 30%;
+    text-align: center;
+    width: 55%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+/* .bodyHome {
+    width: 100%;
+    height: 35rem;
+    padding: 150px 0;
+} */
+
+/* h5 {
+    width: 55%;
+    box-sizing: border-box;
+    padding-bottom: 5%;
+
+} */
+
+
+
+}
+
 </style>
