@@ -237,11 +237,10 @@ hr {
     font-size: x-large;
     width: 90%;
     margin: 0 auto;
-    padding-top: 15%;
 }
 
 hr {
-    padding-bottom: 15%;
+    padding-bottom: 25%;
 }
 .toDoLi {
     font-size: x-large;
@@ -261,7 +260,7 @@ hr {
 
 h4 {
     font-size: xx-large;
-    padding-top: 30%;
+    padding-top: 50%;
     text-align: left;
     width: 55%;
     height: auto;
