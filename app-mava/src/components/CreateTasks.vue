@@ -237,8 +237,12 @@ hr {
     font-size: x-large;
     width: 90%;
     margin: 0 auto;
+    padding-top: 15%;
 }
 
+hr {
+    padding-bottom: 15%;
+}
 .toDoLi {
     font-size: x-large;
 }
@@ -253,6 +257,7 @@ hr {
 .addTask-text {
     font-size: x-large;
 }
+
 
 h4 {
     font-size: xx-large;
