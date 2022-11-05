@@ -18,7 +18,7 @@ const logout = () => {
 <template>
     <div class="fixed-top container-color">
         <div class="about">
-            <h1 class="display-5">The ToDo or Not ToDo List</h1>
+            <h1 class="display-5">The ToDo <i>or </i>Not ToDo List</h1>
         </div>
         <nav>
             <ul class="nav nav-tabs fixed" id="myTab" role="tablist">
@@ -75,16 +75,27 @@ nav ul li {
     font-weight: 450;
 
 }
+/* -----  mobile -----  */
+@media (max-width: 400px) {
+h1 {
+    padding: 10% 0;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+}
 
-@media (min-width: 1024px) {
 
-    /* .about {
-    min-height: 10vh;
+.nav {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    } */
+    justify-content: flex-end;
+}
 
+h1 i {
+    font-size: x-large;
+}
+.about {
+    width: 100%;
+}
 
 }
 </style>

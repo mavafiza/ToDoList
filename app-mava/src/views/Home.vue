@@ -64,6 +64,19 @@ h5 {
     height: auto;
 }
 
+
+/* mobile */
+
+@media (max-width: 400px) {
+    .bodyHome {
+    width: 100%;
+    height: auto;
+    /* padding-top: 1000px; */
+}
+
+}
+
+
 /* .wellcome {
     color: #7c151554;
     ;

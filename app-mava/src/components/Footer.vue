@@ -40,7 +40,7 @@ const logout = () => {
                     </div>
 
                     <div>
-                        <div class="row align-items-md-end py-4 icons-flex">
+                        <div class="row align-items-md-end py-4 icons-flex yellow-box">
                             <div class="col-md mb-3 mb-md-0 vertical-text">
                                 <p class="text-light-grey mb-0">© Mavafiza. 2022 Barcelona-Spain. All rights reserved.
                                 </p>
@@ -85,6 +85,7 @@ h3 {
     text-align: center;
 }
 
+
 .vertical-text {
     text-orientation: upright;
 }
@@ -121,6 +122,40 @@ h3 {
 
 }
 
+/* -----  mobile -----  */
+@media (max-width: 400px) {
 
-@media (min-width: 1024px) {}
+p {
+    width: 90%;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: large;
+}
+
+h4 {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.yellow {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.yellow-box {
+    margin: 0;
+}
+.upFooter{
+    padding-top: 5%;
+    margin: 0 auto;
+    width: 75%;
+    position: relative;
+    display: flex;
+}
+
+
+
+}
+
 </style>
