@@ -38,6 +38,14 @@ npm run dev
 ```sh
 npm run build
 ```
+
+My final project - bootcamp frontend/ Ironhack
+
+This App is the final project of the Ironhack-frontend Bootcamp, an incredible and enriching experience not only for the training but also for the quality of the staff that works with dedication, patience, enthusiasm, human warmth, and also demand... but without losing the mystique of the work they do and that they teach us. Thanks to the entire pack that makes this happen and especially to Marc, Cristian, and Pablo, a fantastic triad.
+
+
+
+
 Copyright <Mavafiza 2022> <COPYRIGHT HOLDER>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
