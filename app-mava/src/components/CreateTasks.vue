@@ -219,7 +219,7 @@ hr {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 37rem;
+    height: auto;
     text-align: center;
     justify-content: center;
     margin: 0 auto;
