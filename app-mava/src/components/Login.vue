@@ -74,6 +74,8 @@ const handleSubmit = async () => {
     padding-top: 150px;
 }
 
+/* ------mobile-------*/
+
 @media (max-width: 400px) {
 .registro {
     display: flex;

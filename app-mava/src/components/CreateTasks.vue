@@ -121,9 +121,10 @@ const changeIsComplete = async (task) => {
 
 
 <style scoped>
+
+/*-----desktop----*/
 .order div input {
     opacity: 20%;
-    background-color: red;
 }
 
 .padding-top {
@@ -209,6 +210,65 @@ hr {
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
 }
+
+/* ------mobile-------*/
+
+@media (max-width: 400px) {
+.padding-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 37rem;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+.order-checkbox{
+    width: 10%;
+}
+
+.order div input {
+    width: 100%;
+}
+.newTask {
+    font-size: x-large;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.toDoLi {
+    font-size: x-large;
+}
+
+.toDoLi div input{
+    font-size: x-large;
+}
+.addTask {
+    width: 90%;
+    margin: 0 auto;
+}
+.addTask-text {
+    font-size: x-large;
+}
+
+h4 {
+    font-size: xx-large;
+    padding-top: 30%;
+    text-align: left;
+    width: 55%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+}
+
+
+
+
 /* 
 #task-list {
     width: 100%;
@@ -222,7 +282,8 @@ hr {
 
 
 } */
-h4 {
+
+/* h4 {
     text-align: left;
     margin-top: 15%;
     margin-bottom: 5%;
@@ -318,5 +379,5 @@ h1 {
 
 .tasks__item__remove i {
     vertical-align: middle;
-}
+} */
 </style>
