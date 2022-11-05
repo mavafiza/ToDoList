@@ -70,8 +70,23 @@ h5 {
 @media (max-width: 400px) {
     .bodyHome {
     width: 100%;
-    height: auto;
-    /* padding-top: 1000px; */
+    height: 35rem;
+    /* padding: 150px 0; */
+}
+
+h5 {
+    width: 55%;
+    box-sizing: border-box;
+    padding-bottom: 5%;
+
+}
+
+h3 {
+    width: 55%;
+    padding-top: 55%;
+    box-sizing: border-box;
+    padding-bottom: 5%;
+
 }
 
 }
