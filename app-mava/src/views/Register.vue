@@ -117,21 +117,6 @@ a {
 }
 
 
-/* .bodyHome {
-    width: 100%;
-    height: 35rem;
-    padding: 150px 0;
-} */
-
-/* h5 {
-    width: 55%;
-    box-sizing: border-box;
-    padding-bottom: 5%;
-
-} */
-
-
-
 }
 
 </style>

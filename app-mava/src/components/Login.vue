@@ -74,4 +74,37 @@ const handleSubmit = async () => {
     padding-top: 150px;
 }
 
+@media (max-width: 400px) {
+.registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 37rem;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+form {
+    width: 90%;
+}
+
+a {
+    padding: 0;
+    font-size: x-large;
+}
+.texto {
+    padding-top: 30%;
+    text-align: center;
+    width: 55%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+}
+
+
 </style>
