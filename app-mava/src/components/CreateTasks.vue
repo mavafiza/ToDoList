@@ -213,7 +213,7 @@ hr {
 
 /* ------mobile-------*/
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
 .padding-top {
     display: flex;
     flex-direction: column;
@@ -235,7 +235,7 @@ hr {
 }
 .newTask {
     font-size: medium;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
 }
 
