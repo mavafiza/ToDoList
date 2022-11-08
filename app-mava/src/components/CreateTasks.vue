@@ -234,7 +234,7 @@ hr {
     width: 100%;
 }
 .newTask {
-    font-size: large;
+    font-size: medium;
     width: 90%;
     margin: 0 auto;
 }
