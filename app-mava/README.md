@@ -53,3 +53,31 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+-------------------------------------------------------
+
+Instructions
+
+*Step one*
+SingUp with your email, telephone number and your keyword
+
+*Step Two*
+Check your email account and confirm in the link
+
+*Step Three*
+Log In with you email and keyword
+
+*Step four*
+Click on "create Taks" to start 
+
+*Add Task*
+Type on the "New Task space" and click on "add" botton
+
+*Delete*
+Click on *delete* next to the task you want to delete
+
+*Edit*
+Click on the task you want to edit then click on "save" button
+To Cancel edition click on "cancel" button
