@@ -235,7 +235,7 @@ hr {
 }
 .newTask {
     font-size: medium;
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
 }
 
@@ -247,7 +247,7 @@ hr {
 }
 
 .toDoLi div input{
-    font-size: x-large;
+    font-size: large;
 }
 .addTask {
     width: 90%;
