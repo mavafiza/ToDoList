@@ -63,8 +63,6 @@ const changeIsComplete = async (task) => {
 
 <template id="task-list">
 
-    <!--                          prueba                          -->
-
     <div class="padding-top">
         <div class="newTask">
             <h4>Tasks</h4>
@@ -234,6 +232,8 @@ hr {
     width: 100%;
 }
 .newTask {
+    color: #17a2b8;
+    font-style: oblique;
     font-size: medium;
     width: 90%;
     margin: 0 auto;
