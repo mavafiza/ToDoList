@@ -232,7 +232,7 @@ hr {
     width: 100%;
 }
 .newTask {
-    color: #17a2b9;
+    color: #17a2b8;
     font-style: oblique;
     font-size: medium;
     width: 90%;
